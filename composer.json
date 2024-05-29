@@ -1,0 +1,24 @@
+{
+    "name": "bubblegum-php/bubblegum-routes",
+    "description": "Routes module for BUBBLEGUM.",
+    "keywords": ["bubblegum", "bubblegum-routes", "routes"],
+    "homepage": "https://github.com/bubblegum-php/bubblegum-routes",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "LankryF",
+            "email": "lankrf@gmail.com"
+        }
+    ],
+    "support": {
+        "source": "https://github.com/bubblegum-php/bubblegum-routes"
+    },
+    "require": {
+        "php": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bubblegum/Routes": "src/"
+        }
+    }
+}
