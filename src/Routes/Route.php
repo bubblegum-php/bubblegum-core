@@ -4,7 +4,7 @@ namespace Bubblegum\Routes;
 
 class Route
 {
-    protected static array $routes = [
+    protected static array $routeConfigs = [
         'GET' => array(),
         'POST' => array(),
     ];
@@ -14,25 +14,25 @@ class Route
         'POST' => 'store',
     ];
 
-    public static function get(string $url, $controller): RouteConfig
+    public static function get(string $uri, string $routedComponentName): RouteConfig
     {
-        return self::route('GET', $url, $controller);
+        return self::route('GET', $uri, $routedComponentName);
     }
 
-    public static function post(string $url, $controller): RouteConfig
+    public static function post(string $uri, string $routedComponentName): RouteConfig
     {
-        return self::route('POST', $url, $controller);
+        return self::route('POST', $uri, $routedComponentName);
     }
 
-    public static function route(string $httpMethod, string $url, $controller): RouteConfig
+    public static function route(string $httpMethod, string $uri, string $routedComponentName): RouteConfig
     {
-        $routeConfig = new RouteConfig($url, $controller, self::$defaultMethods[$httpMethod]);
-        self::$routes[$httpMethod][] = $routeConfig;
+        $routeConfig = new RouteConfig($uri, $routedComponentName, self::$defaultMethods[$httpMethod]);
+        self::$routeConfigs[$httpMethod][] = $routeConfig;
         return $routeConfig;
     }
 
-    public static function getRoutes(): array
+    public static function getRouteConfigs(): array
     {
-        return self::$routes;
+        return self::$routeConfigs;
     }
 }
