@@ -1,7 +1,7 @@
 {
     "name": "bubblegum-php/bubblegum-core",
-    "description": "Routes module for BUBBLEGUM.",
-    "keywords": ["bubblegum", "bubblegum-routes", "routes"],
+    "description": "Bubblegum core including app and routes.",
+    "keywords": ["bubblegum", "bubblegum-core", "core"],
     "homepage": "https://github.com/bubblegum-php/bubblegum-core",
     "license": "MIT",
     "authors": [
