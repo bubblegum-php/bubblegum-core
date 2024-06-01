@@ -35,9 +35,4 @@ class RouteConfig
     {
         return $this->regexPattern;
     }
-
-    public function getMethod(): string
-    {
-        return $this->method;
-    }
 }
