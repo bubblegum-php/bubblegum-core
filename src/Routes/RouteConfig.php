@@ -16,7 +16,7 @@ class RouteConfig
 
     public function to(string $destinationName): RouteConfig
     {
-        $this->$destinationName = $destinationName;
+        $this->destinationName = $destinationName;
         return $this;
     }
 
