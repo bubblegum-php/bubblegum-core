@@ -4,10 +4,15 @@ namespace Bubblegum;
 
 class Request
 {
-    public function __construct(private array $data)
+    public function __construct()
     { }
 
     public function all() {
-        return $this->data;
+        return self::getRequestData();
+    }
+
+    protected static function getRequestData(): array
+    {
+        return $_REQUEST;
     }
 }
