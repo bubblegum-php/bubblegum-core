@@ -9,5 +9,5 @@ abstract class RoutedComponent
     public function __construct(protected string $destinationName)
     {}
     
-    abstract function referToDestination(Request $request): string;
+    abstract public function content(Request $request, array $data = []): string;
 }
