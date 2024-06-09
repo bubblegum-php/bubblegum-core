@@ -2,6 +2,8 @@
 
 namespace Bubblegum\Routes;
 
+use Bubblegum\Exceptions\RouteException;
+
 class RouteJunction
 {
     public static function getRouteConfig(): ?RouteConfig
@@ -14,7 +16,7 @@ class RouteJunction
                 return $routeConfig;
             }
         }
-        return null;
+        throw new RouteException("No route found for '{$uri}'", 404);
     }
 
     public static function clearedUri(): string
