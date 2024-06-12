@@ -16,7 +16,7 @@ class RouteJunction
                 return $routeConfig;
             }
         }
-        throw new RouteException("No route found for '{$uri}'", 404);
+        throw new RouteException("No route found for \"{$_SERVER['REQUEST_URI']}\"", 404);
     }
 
     public static function clearedUri(): string
