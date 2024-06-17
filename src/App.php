@@ -5,8 +5,15 @@ namespace Bubblegum;
 use Bubblegum\Routes\RouteJunction;
 use Exception;
 
+/**
+ * Bubblegum application
+ */
 class App
 {
+    /**
+     * Run application
+     * @return void
+     */
     public static function run(): void
     {
         try {
