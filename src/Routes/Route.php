@@ -13,6 +13,11 @@ class Route
     protected static array $routeConfigs = [
         'GET' => array(),
         'POST' => array(),
+        'PUT' => array(),
+        'PATCH' => array(),
+        'DELETE' => array(),
+        'HEAD' => array(),
+        'OPTIONS' => array()
     ];
 
     /**
@@ -21,6 +26,11 @@ class Route
     protected static array $defaultMethods = [
         'GET' => 'index',
         'POST' => 'store',
+        'PUT' => 'update',
+        'PATCH' => 'patch',
+        'DELETE' => 'destroy',
+        'HEAD' => 'head',
+        'OPTIONS' => 'options'
     ];
 
     /**
@@ -41,6 +51,56 @@ class Route
     public static function post(string $uri, string $routedComponentName): RouteConfig
     {
         return self::route('POST', $uri, $routedComponentName);
+    }
+
+    /**
+     * @param string $uri
+     * @param string $routedComponentName
+     * @return RouteConfig
+     */
+    public static function update(string $uri, string $routedComponentName): RouteConfig
+    {
+        return self::route('PUT', $uri, $routedComponentName);
+    }
+
+    /**
+     * @param string $uri
+     * @param string $routedComponentName
+     * @return RouteConfig
+     */
+    public static function patch(string $uri, string $routedComponentName): RouteConfig
+    {
+        return self::route('PATCH', $uri, $routedComponentName);
+    }
+
+    /**
+     * @param string $uri
+     * @param string $routedComponentName
+     * @return RouteConfig
+     */
+    public static function destroy(string $uri, string $routedComponentName): RouteConfig
+    {
+        return self::route('DELETE', $uri, $routedComponentName);
+    }
+
+    /**
+     * @param string $uri
+     * @param string $routedComponentName
+     * @return RouteConfig
+     */
+    public static function head(string $uri, string $routedComponentName): RouteConfig
+    {
+        return self::route('HEAD', $uri, $routedComponentName);
+    }
+
+    /**
+     * @param string $uri
+     * @param string $routedComponentName
+     * @return RouteConfig
+     */
+    public static function options(string $uri, string $routedComponentName): RouteConfig
+    {
+        return self::route('OPTIONS', $uri, $routedComponentName);
     }
 
     /**
