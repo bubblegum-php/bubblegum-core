@@ -54,6 +54,28 @@ class RouteConfig
     }
 
     /**
+     * Merges data with existing data with replacement during duplication.
+     * @param array $data
+     * @return $this
+     */
+    public function withDataMerge(array $data): RouteConfig
+    {
+        $this->data = array_merge($this->data, $data);
+        return $this;
+    }
+
+    /**
+     * Supplement existing data without replacement. If the existing data contains the same key, skip it.
+     * @param array $data
+     * @return $this
+     */
+    public function withDataSupplement(array $data): RouteConfig
+    {
+        $this->data = array_merge($data, $this->data);
+        return $this;
+    }
+
+    /**
      *
      * @return array
      */
