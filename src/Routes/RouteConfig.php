@@ -21,11 +21,11 @@ class RouteConfig
     protected array $data = [];
 
     /**
-     * @param string $uri
+     * @param string $uriTemplate
      * @param string $routedComponentName
      * @param string|null $destinationNameByDefault
      */
-    public function __construct(protected string $uri, protected string $routedComponentName, ?string $destinationNameByDefault = null)
+    public function __construct(protected string $uriTemplate, protected string $routedComponentName, ?string $destinationNameByDefault = null)
     {
         $this->destinationName = $destinationNameByDefault;
         $this->regexPattern = $this->generateRegexPattern();
