@@ -34,73 +34,73 @@ class Route
     ];
 
     /**
-     * @param string $uri
+     * @param string $uriTemplate
      * @param string $routedComponentName
      * @return RouteConfig
      */
-    public static function get(string $uri, string $routedComponentName): RouteConfig
+    public static function get(string $uriTemplate, string $routedComponentName): RouteConfig
     {
-        return self::route('GET', $uri, $routedComponentName);
+        return self::route('GET', $uriTemplate, $routedComponentName);
     }
 
     /**
-     * @param string $uri
+     * @param string $uriTemplate
      * @param string $routedComponentName
      * @return RouteConfig
      */
-    public static function post(string $uri, string $routedComponentName): RouteConfig
+    public static function post(string $uriTemplate, string $routedComponentName): RouteConfig
     {
-        return self::route('POST', $uri, $routedComponentName);
+        return self::route('POST', $uriTemplate, $routedComponentName);
     }
 
     /**
-     * @param string $uri
+     * @param string $uriTemplate
      * @param string $routedComponentName
      * @return RouteConfig
      */
-    public static function update(string $uri, string $routedComponentName): RouteConfig
+    public static function update(string $uriTemplate, string $routedComponentName): RouteConfig
     {
-        return self::route('PUT', $uri, $routedComponentName);
+        return self::route('PUT', $uriTemplate, $routedComponentName);
     }
 
     /**
-     * @param string $uri
+     * @param string $uriTemplate
      * @param string $routedComponentName
      * @return RouteConfig
      */
-    public static function patch(string $uri, string $routedComponentName): RouteConfig
+    public static function patch(string $uriTemplate, string $routedComponentName): RouteConfig
     {
-        return self::route('PATCH', $uri, $routedComponentName);
+        return self::route('PATCH', $uriTemplate, $routedComponentName);
     }
 
     /**
-     * @param string $uri
+     * @param string $uriTemplate
      * @param string $routedComponentName
      * @return RouteConfig
      */
-    public static function destroy(string $uri, string $routedComponentName): RouteConfig
+    public static function destroy(string $uriTemplate, string $routedComponentName): RouteConfig
     {
-        return self::route('DELETE', $uri, $routedComponentName);
+        return self::route('DELETE', $uriTemplate, $routedComponentName);
     }
 
     /**
-     * @param string $uri
+     * @param string $uriTemplate
      * @param string $routedComponentName
      * @return RouteConfig
      */
-    public static function head(string $uri, string $routedComponentName): RouteConfig
+    public static function head(string $uriTemplate, string $routedComponentName): RouteConfig
     {
-        return self::route('HEAD', $uri, $routedComponentName);
+        return self::route('HEAD', $uriTemplate, $routedComponentName);
     }
 
     /**
-     * @param string $uri
+     * @param string $uriTemplate
      * @param string $routedComponentName
      * @return RouteConfig
      */
-    public static function options(string $uri, string $routedComponentName): RouteConfig
+    public static function options(string $uriTemplate, string $routedComponentName): RouteConfig
     {
-        return self::route('OPTIONS', $uri, $routedComponentName);
+        return self::route('OPTIONS', $uriTemplate, $routedComponentName);
     }
 
     /**
