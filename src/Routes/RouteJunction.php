@@ -20,7 +20,7 @@ class RouteJunction
         $routeConfigs = Route::getRouteConfigs()[$_SERVER['REQUEST_METHOD']];
         $uri = self::clearedUri();
         foreach ($routeConfigs as $routeConfig) {
-            if (self::compare($routeConfig, $uri)) {
+            if (self::compareWithDataExtracting($routeConfig, $uri)) {
                 return $routeConfig;
             }
         }
@@ -36,13 +36,18 @@ class RouteJunction
     }
 
     /**
-     * Compare the route config pattern with a URI
+     * Compare the route configuration pattern with a URI, extracts URI data into the route configuration
      * @param RouteConfig $routeConfig
      * @param string $uri
-     * @return string
+     * @return bool
      */
-    public static function compare(RouteConfig $routeConfig, string $uri): string
+    public static function compareWithDataExtracting(RouteConfig &$routeConfig, string $uri): bool
     {
-        return preg_match($routeConfig->getRegexPattern(), $uri);
+        $matches = array();
+        if (preg_match($routeConfig->getRegexPattern(), $uri, $matches)) {
+            $routeConfig->withDataSupplement(array_filter($matches, 'is_string', ARRAY_FILTER_USE_KEY));
+            return true;
+        }
+        return false;
     }
 }

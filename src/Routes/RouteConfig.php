@@ -105,7 +105,11 @@ class RouteConfig
      */
     protected function generateRegexPattern(): string
     {
-        $escaped = preg_quote(trim($this->uri, '/'), '/');
-        return "/^$escaped\$/";
+        $pattern = preg_replace(
+            '/\{(\w+)\}/',
+            '(?P<$1>[^/]+)',
+            trim($this->uriTemplate, '/')
+        );
+        return "#^$pattern\$#";
     }
 }
