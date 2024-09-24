@@ -7,7 +7,7 @@ class Request
     protected array $rowData = [];
     public function __construct()
     {
-        if ($_SERVER['HTTP_CONTENT_TYPE'] === 'application/json') {
+        if ($_SERVER['CONTENT_TYPE'] === 'application/json') {
             $this->rowData = json_decode(file_get_contents('php://input'), true);
         }
     }
