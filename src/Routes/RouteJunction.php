@@ -32,7 +32,7 @@ class RouteJunction
      */
     public static function clearedUri(): string
     {
-        return trim($_SERVER['REQUEST_URI'], '/');
+        return trim(strtok($_SERVER['REQUEST_URI'], '?'), '/');
     }
 
     /**
