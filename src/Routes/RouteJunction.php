@@ -11,10 +11,10 @@ class RouteJunction
 {
     /**
      * Get a proper route configuration that fits the request URI
-     * @return RouteConfig|null
+     * @return RouteConfig
      * @throws RouteException
      */
-    public static function getRouteConfig(): ?RouteConfig
+    public static function getRouteConfig(): RouteConfig
     {
         /* @var RouteConfig[] $routeConfigs */
         $routeConfigs = Route::getRouteConfigs()[$_SERVER['REQUEST_METHOD']];

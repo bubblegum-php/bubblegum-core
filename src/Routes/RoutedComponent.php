@@ -21,5 +21,5 @@ abstract class RoutedComponent
      * @param array $data
      * @return string
      */
-    abstract public function content(Request $request, array $data = []): string;
+    abstract public function handle(Request $request, array $data = []): string;
 }

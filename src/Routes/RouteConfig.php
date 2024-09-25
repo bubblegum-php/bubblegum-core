@@ -22,10 +22,10 @@ class RouteConfig
 
     /**
      * @param string $uriTemplate
-     * @param string $routedComponentName
+     * @param string $routedComponent
      * @param string|null $destinationNameByDefault
      */
-    public function __construct(protected string $uriTemplate, protected string $routedComponentName, ?string $destinationNameByDefault = null)
+    public function __construct(protected string $uriTemplate, protected string $routedComponent, ?string $destinationNameByDefault = null)
     {
         $this->destinationName = $destinationNameByDefault;
         $this->regexPattern = $this->generateRegexPattern();
@@ -89,7 +89,7 @@ class RouteConfig
      */
     public function getRoutedComponent(): RoutedComponent
     {
-        return new $this->routedComponentName($this->destinationName);
+        return new $this->routedComponent($this->destinationName);
     }
 
     /**

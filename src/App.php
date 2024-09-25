@@ -19,7 +19,7 @@ class App
         try {
             $routeConfig = RouteJunction::getRouteConfig();
             $request = new Request();
-            echo $routeConfig->getRoutedComponent()->content($request, $routeConfig->getData());
+            echo $routeConfig->getRoutedComponent()->handle($request, $routeConfig->getData());
         } catch (Exception $ex) {
             echo "<h1>Error {$ex->getCode()}</h1><pre>{$ex->getMessage()}</pre>";
         }
