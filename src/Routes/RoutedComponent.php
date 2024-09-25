@@ -9,15 +9,6 @@ use Bubblegum\Request;
  */
 abstract class RoutedComponent
 {
-    protected string $destinationName;
-    /**
-     * @param string $destinationName
-     */
-    public function __construct(string $destinationName)
-    {
-        $this->setDestinationName($destinationName);
-    }
-
     abstract public function setDestinationName($destinationName);
     abstract public function getDestinationName(): string;
 
