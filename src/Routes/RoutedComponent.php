@@ -18,14 +18,8 @@ abstract class RoutedComponent
         $this->setDestinationName($destinationName);
     }
 
-    public function setDestinationName($destinationName): void
-    {
-        $this->destinationName = $destinationName;
-    }
-    public function getDestinationName(): string
-    {
-        return $this->destinationName;
-    }
+    abstract public function setDestinationName($destinationName);
+    abstract public function getDestinationName(): string;
 
     /**
      * Get the content from this component
