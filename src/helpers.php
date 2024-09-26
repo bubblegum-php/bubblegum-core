@@ -8,7 +8,8 @@ if (!function_exists('dd')) {
      */
     function dd(mixed ...$values): void
     {
-        var_dump(...$values);
+        header('Content-Type: application/json');
+        echo json_encode($values,JSON_UNESCAPED_UNICODE);
         die();
     }
 }
