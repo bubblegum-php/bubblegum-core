@@ -16,7 +16,7 @@ abstract class RoutedComponent
      * Get the content from this component
      * @param Request $request
      * @param array $data
-     * @return string
+     * @return string|array
      */
-    abstract public function handle(Request $request, array $data = []): string;
+    abstract public function handle(Request $request, array $data = []): string|array;
 }
