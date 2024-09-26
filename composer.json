@@ -1,0 +1,27 @@
+{
+    "name": "bubblegum-php/bubblegum-core",
+    "description": "Bubblegum core including app and routes.",
+    "keywords": ["bubblegum", "bubblegum-core", "core"],
+    "homepage": "https://github.com/bubblegum-php/bubblegum-core",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "LankryF",
+            "email": "lankrf@gmail.com"
+        }
+    ],
+    "support": {
+        "source": "https://github.com/bubblegum-php/bubblegum-core"
+    },
+    "require": {
+        "php": "^8.0"
+    },
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "psr-4": {
+            "Bubblegum\\": "src/"
+        }
+    }
+}
