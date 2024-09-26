@@ -19,7 +19,16 @@ class App
         try {
             $routeConfig = RouteJunction::getRouteConfig();
             $request = new Request();
-            echo $routeConfig->getRoutedComponent()->handle($request, $routeConfig->getData());
+            $response = $routeConfig->getRoutedComponent()->handle($request, $routeConfig->getData());
+            switch (gettype($response)) {
+                case 'string':
+                    echo $response;
+                    return;
+                default:
+                    header('Content-Type: application/json');
+                    echo json_encode($response);
+                    return;
+            }
         } catch (Exception $ex) {
             echo "<h1>Error {$ex->getCode()}</h1><pre>{$ex->getMessage()}</pre>";
         }
